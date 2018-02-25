@@ -11,13 +11,13 @@ except:
     _have_setuptools = False
 
 setup_kwargs = {}
-setup_kwargs[ 'setup_requires' ] = [ 'numpy>=1.9.2', 'cython>=0.20.1' ]
-setup_kwargs[ 'install_requires' ] = [ 'numpy>=1.9.2',
-        'cython>=0.20.1',
-        'matplotlib>=1.4.3',
-        'loprop>=0.1.8',
-        'applequist>=0.1',
-        'ipython>=3.0',
+setup_kwargs[ 'setup_requires' ] = [ 'numpy==1.9.2', 'cython==0.20.1' ]
+setup_kwargs[ 'install_requires' ] = [ 'numpy==1.9.2',
+        'cython==0.20.1',
+        'matplotlib==1.4.3',
+        'loprop==0.1.8',
+        'applequist==0.1',
+        'ipython==3.0',
         ]
 
 setup(name="moltools",
