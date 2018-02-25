@@ -35,7 +35,7 @@ before_install:
 install:
   - pip install --upgrade setuptools
   - python setup.py install
-  - pip install coveralls matplotlib numpy cython h5py applequist
+  - pip install nose coveralls matplotlib numpy cython h5py applequist
 
 #Build cythonized version of particles solver
 #before_script:
@@ -44,6 +44,4 @@ install:
 #  - cd ../..
 
 script: 
-  nosetests -a 'type=!cython' -a 'speed=!slow' -a 'speed=fast' --cover-erase --with-coverage --cover-package=pdbreader,molecules,read_dal,template,ut
-after_success:
-  coveralls
+  nosetests -a 'type=!cython' -a 'speed=!slow' -a 'speed=fast'
