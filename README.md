@@ -23,11 +23,15 @@
 
 ## Installation:
 
-`git clone --recursive git@github.com:fishstamp82/moltools.git`
+`git clone git@github.com:fishstamp82/moltools.git`
 
-`export PYTHONPATH=$(pwd)/moltools/src:$PYTHONPATH`
+`cd moltools`
 
-> Tip: Export the pythonpath variable in your initrc file of choice in order to have it automatically load.
+`virtualenv -p python2.7 venv2.7`
+
+`source venv2.7/bin/activate`
+
+`python setup.py install`
 
 
 Execute the following script if you want to run DALTON computations in parallel using HPC clusters.
