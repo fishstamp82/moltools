@@ -24,19 +24,17 @@ git:
 before_install:
 
   #To install LoProp for Dalton
-
   - git clone https://github.com/vahtras/loprop.git
   - cd loprop
-  - python setup.py install
-  - cd ..
   #// LoProp
   - sudo apt-get update -qq
   - sudo apt-get install blas atlas libhdf5-serial-dev
-    #- sudo apt-get install gcc
   - git submodule update --init --recursive
+  - cd ..
 
 install:
   - pip install --upgrade setuptools
+  - python setup.py install
   - pip install coveralls matplotlib numpy cython h5py applequist
 
 #Build cythonized version of particles solver
@@ -49,5 +47,3 @@ script:
   nosetests -a 'type=!cython' -a 'speed=!slow' -a 'speed=fast' --cover-erase --with-coverage --cover-package=pdbreader,molecules,read_dal,template,ut
 after_success:
   coveralls
-
-
