@@ -28,7 +28,7 @@ before_install:
   - cd loprop
   #// LoProp
   - sudo apt-get update -qq
-  - sudo apt-get install blas atlas libhdf5-serial-dev
+  - sudo apt-get install libatlas-base-dev  libhdf5-serial-dev
   - git submodule update --init --recursive
   - cd ..
 
