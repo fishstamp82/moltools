@@ -22,15 +22,14 @@ git:
     false
 
 before_install:
-
-  #To install LoProp for Dalton
+  #Prepar libraries for ubuntu
+  - sudo apt-get update -qq
+  - sudo apt-get install libatlas-base-dev libhdf5-serial-dev
+  #// LoProp
   - git clone https://github.com/vahtras/loprop.git
   - cd loprop
   - python setup.py install
   - cd ..
-  #// LoProp
-  - sudo apt-get update -qq
-  - sudo apt-get install libatlas-base-dev  libhdf5-serial-dev
   - git submodule update --init --recursive
   - cd ..
 
